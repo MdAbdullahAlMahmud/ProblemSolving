@@ -13,13 +13,13 @@ public class AddTwoNumbers {
 
         print(head );
         */
-        ListNode linkedList = new ListNode();
+        ListNode2 linkedList = new ListNode2();
         linkedList.insertNode(2);
         linkedList.insertNode(4);
         linkedList.insertNode(3);
 
         System.out.println("---------------------");
-        ListNode l2 = new ListNode();
+        ListNode2 l2 = new ListNode2();
         l2.insertNode(5);
         l2.insertNode(6);
         l2.insertNode(4);
@@ -32,7 +32,7 @@ public class AddTwoNumbers {
 //        addTwoNumbers(linkedList.headNode(),l2.headNode());
 
         //----------first LinkList-------------
-        ListNode current = linkedList.headNode();
+        ListNode2 current = linkedList.headNode();
 
 
         StringBuilder firstNumber = new StringBuilder();
@@ -52,7 +52,7 @@ public class AddTwoNumbers {
 
 
         //----------Second LinkList-------------
-        ListNode current2 = l2.headNode();
+        ListNode2 current2 = l2.headNode();
 
 
         StringBuilder secondNumber = new StringBuilder();
@@ -78,7 +78,7 @@ public class AddTwoNumbers {
         String mainAns = String.valueOf(summation.reverse());
         System.out.println("Ans " + mainAns);
 
-        ListNode sumLinkedList = new ListNode();
+        ListNode2 sumLinkedList = new ListNode2();
         for (int i = 0; i < mainAns.length(); i++) {
             sumLinkedList.insertNode(Integer.parseInt(String.valueOf(mainAns.charAt(i))));
         }
@@ -86,7 +86,7 @@ public class AddTwoNumbers {
 
         // trying to print final linked list
         System.out.println("Final Result");
-        ListNode result = sumLinkedList.headNode();
+        ListNode2 result = sumLinkedList.headNode();
 
         while (result.next!=null){
             System.out.println(result.val);
@@ -96,9 +96,9 @@ public class AddTwoNumbers {
 
     }
 
-    public static ListNode addTwoNumbers(ListNode linkedList, ListNode l2) {
+    public static ListNode2 addTwoNumbers(ListNode2 linkedList, ListNode2 l2) {
 
-        ListNode current = linkedList;
+        ListNode2 current = linkedList;
         StringBuilder firstNumber = new StringBuilder();
         while (current.next!=null){
             firstNumber.append(current.val);
@@ -109,7 +109,7 @@ public class AddTwoNumbers {
 
 
 
-        ListNode current2 = l2;
+        ListNode2 current2 = l2;
         StringBuilder secondNumber = new StringBuilder();
         while (current2.next!=null){
             secondNumber.append(current2.val);
@@ -124,15 +124,15 @@ public class AddTwoNumbers {
         StringBuilder summation = new StringBuilder();
         summation.append(sum);
         String mainAns = String.valueOf(summation.reverse());
-        ListNode head = new ListNode();
+        ListNode2 head = new ListNode2();
 
-        ListNode temp =null;
+        ListNode2 temp =null;
 
         for (int i = 0; i < mainAns.length(); i++) {
 
             int value = Integer.parseInt(String.valueOf(mainAns.charAt(i)));
 
-            ListNode node = new ListNode();
+            ListNode2 node = new ListNode2();
             node.val = value;
             node.next = null;
 
@@ -187,19 +187,19 @@ public class AddTwoNumbers {
 
 
 }
-class ListNode {
+class ListNode2 {
      int val;
-     ListNode next;
-    private ListNode head=null;
-    private ListNode current=null;
+     ListNode2 next;
+    private ListNode2 head=null;
+    private ListNode2 current=null;
 
-    public ListNode headNode(){
+    public ListNode2 headNode(){
         return  head;
     }
     public  void insertNode(int value){
 
 
-        ListNode node = new ListNode();
+        ListNode2 node = new ListNode2();
         node.val = value;
         node.next = null;
 
@@ -217,7 +217,7 @@ class ListNode {
 
     }
     public  void  print(){
-        ListNode current = head;
+        ListNode2 current = head;
         while (current.next!=null){
             System.out.println(current.val+" ");
             current = current.next;

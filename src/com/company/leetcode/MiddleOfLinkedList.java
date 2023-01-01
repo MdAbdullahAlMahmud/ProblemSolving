@@ -43,21 +43,21 @@ public class MiddleOfLinkedList {
         System.out.println("Middle node value Pointer"+ middleNodeV2(midTempHead).val );
         System.out.println("Middle node value Pointer Practise "+ middleNodePractise(midTempHead).val );*/
 
-        ListNode listNode = new ListNode();
+        ListNode1 listNode1 = new ListNode1();
 
-        listNode.insert(1);
-        listNode.insert(2);
-        listNode.insert(3);
-        listNode.insert(4);
-        listNode.insert(5);
-        reverseList(listNode.head);
+        listNode1.insert(1);
+        listNode1.insert(2);
+        listNode1.insert(3);
+        listNode1.insert(4);
+        listNode1.insert(5);
+        reverseList(listNode1.head);
 
     }
 
-    private  static ListNode  reverseList(ListNode head){
+    private  static ListNode1 reverseList(ListNode1 head){
 
-        ListNode tempHead = head;
-        ListNode shiftNode = tempHead ;
+        ListNode1 tempHead = head;
+        ListNode1 shiftNode = tempHead ;
 
         int count = 0 ;
 
@@ -68,35 +68,25 @@ public class MiddleOfLinkedList {
             // tempHead
             // current block address
             tempHead = tempHead.next;
-
-
           //  tempHead = tempHead.next;
-
-
         }
-
 
        return  tempHead;
 
-
-
-
-
-
     }
-    public static ListNode middleNodeV2(ListNode head) {
-        ListNode slow = head, fast = head;
+    public static ListNode1 middleNodeV2(ListNode1 head) {
+        ListNode1 slow = head, fast = head;
         while (fast != null && fast.next != null) {
             slow = slow.next;
             fast = fast.next.next;
         }
         return slow;
     }
-    public static ListNode middleNode(ListNode head) {
+    public static ListNode1 middleNode(ListNode1 head) {
 
-        ListNode middleNode = null;
+        ListNode1 middleNode = null;
 
-        ListNode tempHead = head;
+        ListNode1 tempHead = head;
         int count = 0 ;
         while (tempHead!=null){
             tempHead = tempHead.next;
@@ -106,7 +96,7 @@ public class MiddleOfLinkedList {
         int index=0;
         int middlePoint = (int)count/2;
 
-        ListNode tHead = head;
+        ListNode1 tHead = head;
         while (tHead!=null){
 
             if(index>=middlePoint){
@@ -120,11 +110,10 @@ public class MiddleOfLinkedList {
         return middleNode;
 
     }
-
-    public static  ListNode middleNodePractise(ListNode head){
+    public static ListNode1 middleNodePractise(ListNode1 head){
         if (head ==null) return  head;
 
-        ListNode slow = head , fast= head;
+        ListNode1 slow = head , fast= head;
         while (fast!=null && fast.next!=null){
             slow = slow.next;
             fast = fast.next.next;
@@ -133,27 +122,27 @@ public class MiddleOfLinkedList {
     }
 
 }
-class ListNode {
+class ListNode1 {
      int val;
-     ListNode next;
+     ListNode1 next;
 
-    public ListNode() {
+    public ListNode1() {
 
     }
 
 
-    ListNode head = null;
+    ListNode1 head = null;
 
     public void  insert(int val){
 
         if (head == null){
-           ListNode node = new ListNode();
+           ListNode1 node = new ListNode1();
             node.val = val;
             node.next = null;
             head = node;
         }else {
 
-            ListNode node = new ListNode();
+            ListNode1 node = new ListNode1();
             node.val = val;
 
 
