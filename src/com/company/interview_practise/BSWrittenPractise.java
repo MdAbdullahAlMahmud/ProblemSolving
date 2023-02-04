@@ -17,9 +17,11 @@ public class BSWrittenPractise {
       //  System.out.println( num+" Number Found " + searchNumber(num));
 
         int sqrt = 15 ;
-        System.out.println( sqrtRootNear(sqrt)+ " is the sqrt of " + sqrt);
+        //System.out.println( sqrtRootNear(sqrt)+ " is the sqrt of " + sqrt);
 
-        System.out.println( sqrtRoot(sqrt)+ " is the near sqrt of " + sqrt);
+        //System.out.println( sqrtRoot(sqrt)+ " is the near sqrt of " + sqrt);
+
+        currencyProblem(868);
     }
 
 
@@ -141,6 +143,25 @@ public class BSWrittenPractise {
             }
         }
         return right;
+    }
+
+    public static  void  currencyProblem (int taka){
+
+        int notes[] = {1000,500,100,50,10,5,1};
+
+        int amount [] = new int[notes.length];
+        int remain = taka ;
+        for (int i = 0; i < 7; i++) {
+            amount[i] = remain/notes[i];
+            remain = taka%notes[i];
+        }
+
+        for (int i = 0; i < 7; i++) {
+            if (amount[i]>0)
+            System.out.println(notes[i] + " " + amount[i]);
+        }
+
+
     }
 
 }
