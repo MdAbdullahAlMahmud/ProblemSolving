@@ -11,8 +11,17 @@ public class BSWrittenPractise {
        // System.out.println(rev +"Rev "  + reverseNumber(rev));
 
 
-        System.out.println("Is Palindrome " + checkPalindrome("100001"));
+       // System.out.println("Is Palindrome " + checkPalindrome("100001"));
+
+        int num = 99;
+      //  System.out.println( num+" Number Found " + searchNumber(num));
+
+        int sqrt = 15 ;
+        System.out.println( sqrtRootNear(sqrt)+ " is the sqrt of " + sqrt);
+
+        System.out.println( sqrtRoot(sqrt)+ " is the near sqrt of " + sqrt);
     }
+
 
 
     public  static  boolean primeNumber(int n){
@@ -31,8 +40,6 @@ public class BSWrittenPractise {
         return  true;
 
     }
-
-
     public  static  int reverseNumber(int n ){
         int rev = 0  ;
         while (n!=0){
@@ -42,17 +49,12 @@ public class BSWrittenPractise {
         }
         return rev;
     }
-
-
     public static  boolean checkPalindrome(String word){
 
         int length = word.length();
-
         word = word.toLowerCase();
         int starting = 0 , ending = length-1;
-
         while (starting<=ending){
-
             if (word.charAt(starting) != word.charAt(ending)){
                 return  false;
             }
@@ -60,11 +62,85 @@ public class BSWrittenPractise {
             ending--;
 
         }
-
         return  true;
-
-
-
-
     }
+    private static   boolean  searchNumber(int n ){
+
+        int start = 1 ;
+        int end = 100 ;
+
+        while (start!=end){
+
+            int middle = (start + end )/2;
+
+            if (middle == n)return true;
+
+            if (middle > n ){
+                end = middle ;
+            }
+            if (middle < n ) {
+                start = middle+1;
+            }
+        }
+        return  false;
+    }
+
+    private static   int   sqrtRoot(int n ){
+
+        int start = 1 ;
+        int end = n ;
+
+        while (start!=end){
+
+            int middle = (start + end )/2;
+
+            if (middle*middle == n) return middle;
+
+            if (middle*middle > n ){
+                end = middle ;
+            }
+            if (middle *middle< n ) {
+                start = middle+1;
+            }
+        }
+        return  -1;
+    }
+    private static   int   sqrtRootNear(int n ){
+
+        int start = 1 ;
+        int end = n ;
+
+        while (start<=end){
+
+            int middle = start + (end - start )/2;
+
+            if (middle == n/middle) {
+                return middle;
+            }/*else if (middle*middle > n ){
+                end = middle -1;
+            }*/
+            else if (middle < n/middle ) {
+                start = middle+1;
+            }else {
+                end = middle -1 ;
+            }
+        }
+        return  end;
+    }
+
+    public static  int mySqrt(int x) {
+        int left = 1, right = x;
+        while (left <= right) {
+            int mid = left + (right - left) / 2;
+            if (mid == x / mid) {
+                return mid;
+            } else if (mid < x / mid) {
+                left = mid + 1;
+            } else {
+                right = mid - 1;
+            }
+        }
+        return right;
+    }
+
 }
