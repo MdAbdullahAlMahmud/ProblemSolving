@@ -9,7 +9,6 @@ public class Test {
 
         test();
 
-
         int arr[] = {1,2,3,4,5,8};
         System.out.println("Index " + unSortedNumber(arr));
     }
